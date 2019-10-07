@@ -1,0 +1,18 @@
+
+<input type="text" [placeholder]="placeholderOp1" />
+
+<input type="text" [placeholder]="placeholderOp2" />
+
+<input type="button" (click)="calcularSuma(3, 2)"  value="Calcular 3 + 2" /> 
+
+<p>Resultado = {{ resultado }}</p>
+
+
+<input type="email" [(ngModel)]="correoElectronico" placeholder="Email" />
+
+<input type="button" value="Enviar email" *ngIf="correoElectronico" />
+
+<img src="https://www.hogar.mapfre.es/wp-content/uploads/2018/09/hamburguesa-sencilla.jpg" *ngIf="mostrarImagen" />
+
+<p>Correo Electrónico {{ correoElectronico }}</p>
+
