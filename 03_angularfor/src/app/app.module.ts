@@ -9,12 +9,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CiudadDetalleComponent } from './ciudad-detalle/ciudad-detalle.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CiudadesListadoComponent
+    CiudadesListadoComponent,
+    CiudadDetalleComponent
   ],
   imports: [
     BrowserModule,

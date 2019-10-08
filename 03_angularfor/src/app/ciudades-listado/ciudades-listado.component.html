@@ -9,7 +9,11 @@
             <img class="imagen-ciudad" mat-card-image [src]="ciudad.photo_url" alt="Foto guapa de {{ ciudad.nombre }}" />
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>Ver detalle</button>
+        <button mat-button (click)="selectCiudad(ciudad)">Ver detalle</button>
     </mat-card-actions>
 </mat-card>
+</div>
+
+<div fxLayout="row" *ngIf="ciudadSeleccionada">
+    <app-ciudad-detalle [ciudad]="ciudadSeleccionada"></app-ciudad-detalle>
 </div>

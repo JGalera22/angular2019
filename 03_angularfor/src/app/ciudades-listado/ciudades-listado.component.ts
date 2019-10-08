@@ -9,10 +9,15 @@ import { CIUDADES } from '../models/mock-ciudades';
 })
 export class CiudadesListadoComponent implements OnInit {
   ciudades: Ciudad[] = CIUDADES;
+  ciudadSeleccionada: Ciudad;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectCiudad(ciudad: Ciudad) {
+    this.ciudadSeleccionada = ciudad;
   }
 
   
