@@ -1,3 +1,13 @@
+.container {
+    padding: 10px
+}
+
 .imagen-ciudad {
     object-fit: cover;
+    height: 200px;
+    padding-top: 10px;
+}
+
+mat-card {
+    margin-bottom: 20px;
 }

@@ -1,12 +1,12 @@
-<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
-<mat-card *ngFor="let ciudad of ciudades; let i=index" fxFlex="1 1">
+<div fxLayout="row wrap" fxLayout.xs="column" class="container" fxLayoutGap="5px">  
+<mat-card *ngFor="let ciudad of ciudades" fxFlex="1 1 calc(33.3% - 5px)" fxFlex.lt-lg="1 1 calc(50% - 5px)"  >
     <mat-card-header>
         <mat-card-title>{{ ciudad.nombre }}</mat-card-title>
         <mat-card-subtitle><span class="flag-icon flag-icon-{{ciudad.pais.iso_code}}"></span>
             {{ ciudad.pais.nombre }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-            <img class="imagen-ciudad" mat-card-image [src]="ciudad.photo_url" alt="Foto guapa de {{ ciudad.nombre }}" />
+            <img fxHide.lt-sm class="imagen-ciudad" mat-card-image [src]="ciudad.photo_url" alt="Foto guapa de {{ ciudad.nombre }}" />
     </mat-card-content>
     <mat-card-actions>
         <button mat-button (click)="selectCiudad(ciudad)">Ver detalle</button>
