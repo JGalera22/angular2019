@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { LoginDto } from '../models/login.dto';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email: string;
-  password: string;
+  email: string = 'clase2dam@gmail.com';
+  password: string = '1234';
 
   constructor(private authService: AuthService) { }
 
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin() {
-    const loginDto: LoginDto = new LoginDto(this.email, this.password);
+    const loginDto = new LoginDto(this.email, this.password);
     this.authService.login(loginDto).subscribe(loginResp => {
       alert(loginResp.token);
     });

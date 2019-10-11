@@ -9,19 +9,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 
-import { AlumnosListadoComponent } from './alumnos-listado/alumnos-listado.component';
-import { LoginComponent } from './login/login.component';
-import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { NgstyleComponent } from './ngstyle/ngstyle.component';
 import { FormsModule } from '@angular/forms';
+import { PlanetsService } from './services/planets.service';
+import { PlanetsListadoComponent } from './planets-listado/planets-listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlumnosListadoComponent,
-    LoginComponent,
-    NgstyleComponent
+    PlanetsListadoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatTableModule
   ],
-  providers: [AuthService],
+  providers: [PlanetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

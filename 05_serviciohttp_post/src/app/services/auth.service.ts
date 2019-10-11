@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginResponse } from '../models/login-response.interface';
+import { LoginDto } from '../models/login.dto';
 
 const authURL = 'https://www.minitwitter.com:3001/apiv1/auth/login';
 const requestOptions = {
