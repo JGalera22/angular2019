@@ -1,0 +1,26 @@
+<!--<app-listado-peliculas></app-listado-peliculas>-->
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="0px">
+<mat-toolbar color="primary" fxFlex="100%">
+    <mat-toolbar-row>
+    <span>PeliculasApp</span>
+    <span class="example-spacer"></span>
+    <a [routerLink]="[ '/populares' ]">
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">grade</mat-icon>
+    </a>&nbsp;
+    <a [routerLink]="[ '/latest' ]">
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">fiber_new</mat-icon>
+    </a>&nbsp;
+    <a [routerLink]="[ '/toprated' ]">
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">thumb_up
+      </mat-icon>
+    </a>&nbsp;
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon" (click)="requestToken()">account_circle</mat-icon>
+
+    
+  </mat-toolbar-row>
+</mat-toolbar>
+</div>
+
+<!-- Router outlet: carga en este elemento, el componente
+que diga el array de rutas que está definido en app.module.ts -->
+<router-outlet></router-outlet>
