@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" class="container">
+  
+    <input type="email" [(ngModel)]="usuario.email" placeholder="Email" #em="ngModel" required [email]="true" />
+
+    <div [hidden]="em.valid || em.pristine"> <!-- EL mensaje de error se oculta si la validación es válida-->
+      <p *ngIf="em.errors?.required">El campo email es requerido</p>
+      <p *ngIf="em.errors?.email">El email no tiene un formato correcto</p>
+    </div>
+
+    <input type="password" [(ngModel)]="usuario.password" placeholder="Contraseña" #pwd="ngModel" required pattern="[0-9a-zA-Z]{4,8}" />
+
+    <div [hidden]="pwd.valid || pwd.pristine"> <!-- EL mensaje de error se oculta si la validación es válida-->
+      <p *ngIf="pwd.errors?.required">El campo password es requerido</p>
+      <p *ngIf="pwd.errors?.pattern">Escribe una clave numérica entre 4 y 8 dígitos</p>
+    </div>
+
+
+    <input type="button" (click)="doLogin()" value="Login" />
+  </div>
