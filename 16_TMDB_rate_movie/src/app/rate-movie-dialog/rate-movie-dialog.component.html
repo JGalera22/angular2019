@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Votar película {{ pelicula.title }}</h1>
+<div mat-dialog-content>
+  <p>Qué votación le das?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="votacion">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="votacion" cdkFocusInitial>Ok</button>
+</div>
