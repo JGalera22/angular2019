@@ -22,8 +22,10 @@
                             <p [ngClass]="{letraPequena: (calcularLongitudDescripcion(pelicula.overview)>180)}">{{pelicula.overview}}</p>
                         </mat-card-content>
                 </div>
-                <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5px">
-                            <button mat-flat-button (click)="openRateDialog(pelicula)" >Votar</button>
+                <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+                        <div>
+                                <button mat-flat-button (click)="openVotacionDialog(pelicula)">Votar</button>
+                        </div>
                 </div>
             </div>
          

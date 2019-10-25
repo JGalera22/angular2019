@@ -10,19 +10,17 @@ import { PeliculaDetalleComponent } from './pelicula-detalle/pelicula-detalle.co
 import { PeliculasService } from './service/peliculas.service';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-encontrada.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListadoPeliculasLatestComponent } from './listado-peliculas-latest/listado-peliculas-latest.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 import { ListadoPeliculasTopComponent } from './listado-peliculas-top/listado-peliculas-top.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './service/auth.service';
-import { RateMovieDialogComponent } from './rate-movie-dialog/rate-movie-dialog.component';
+import { PeliculaVotarDialogComponent } from './pelicula-votar-dialog/pelicula-votar-dialog.component';
 import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 //RUTAS DE LA APP
 const routes: Routes = [ 
@@ -42,19 +40,21 @@ const routes: Routes = [
     PaginaNoEncontradaComponent,
     ListadoPeliculasLatestComponent,
     ListadoPeliculasTopComponent,
-    RateMovieDialogComponent
+    PeliculaVotarDialogComponent
+  ],
+  entryComponents: [
+    PeliculaVotarDialogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatCardModule,
     MatToolbarModule,
-    MatInputModule,
-    FlexLayoutModule,
-    MatIconModule,
     MatFormFieldModule,
-    FormsModule,
     MatDialogModule,
+    FlexLayoutModule,
+    FormsModule,
+    MatIconModule,
     RouterModule.forRoot(
       routes
     ),
@@ -78,9 +78,6 @@ const routes: Routes = [
       "startFromZero": false
     }),
     BrowserAnimationsModule
-  ],
-  entryComponents: [
-    RateMovieDialogComponent
   ],
   providers: [
     PeliculasService,
