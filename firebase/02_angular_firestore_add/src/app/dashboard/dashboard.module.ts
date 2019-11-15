@@ -10,6 +10,8 @@ import {
   MatInputModule,
   MatDialogModule,
   MatCheckboxModule,
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material';
 
 import { ChartsModule } from 'ng2-charts';
@@ -44,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatSnackBarModule,
     ChartsModule,
     FormsModule,
     NgxDatatableModule,
@@ -53,6 +56,9 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [DashboardComponent, UsuariosListadoComponent, UsuariosNuevoDialogComponent],
   entryComponents: [UsuariosNuevoDialogComponent],
-  providers: [UsuariosService]
+  providers: [
+    UsuariosService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}}
+  ]
 })
 export class DashboardModule {}

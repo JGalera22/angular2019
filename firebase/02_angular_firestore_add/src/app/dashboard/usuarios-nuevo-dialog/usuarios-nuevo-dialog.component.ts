@@ -29,7 +29,7 @@ export class UsuariosNuevoDialogComponent implements OnInit {
   }
 
   cerrar() {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 
 }

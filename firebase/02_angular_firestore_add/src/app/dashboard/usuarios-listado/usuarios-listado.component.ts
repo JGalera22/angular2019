@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { Usuario } from 'src/app/models/usuario.interface';
 import { UsuariosNuevoDialogComponent } from '../usuarios-nuevo-dialog/usuarios-nuevo-dialog.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-usuarios-listado',
@@ -11,9 +11,12 @@ import { MatDialog } from '@angular/material';
 })
 export class UsuariosListadoComponent implements OnInit {
   listadoUsuarios: Usuario[];
-  displayedColumns: string[] = ['nombre', 'email', 'github', 'es_admin'];
+  displayedColumns: string[] = ['nombre', 'email', 'github', 'es_admin', 'acciones'];
 
-  constructor(private usuariosService: UsuariosService, public dialog: MatDialog) {
+  constructor(
+    private usuariosService: UsuariosService, 
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -30,6 +33,20 @@ export class UsuariosListadoComponent implements OnInit {
     let dialogRef = this.dialog.open(UsuariosNuevoDialogComponent, {
       width: '300px'
     });
+
+    dialogRef.afterClosed().subscribe(resp => {
+      if(resp != null) {
+        if(resp) {
+          this.snackBar.open("Usuario creado correctamente", );
+        } else {
+          this.snackBar.open("Error al crear usuario");
+        }
+      }
+    });
+  }
+
+  dialogEditUsuario(usuarioToEdit: Usuario) {
+    alert("Quieres editar el usuario: " + usuarioToEdit.nombre);
   }
 
 }
