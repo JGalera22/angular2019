@@ -1,0 +1,39 @@
+<div fxLayout="column">
+    <table mat-table [dataSource]="listadoStories" class="mat-elevation-z8" fxFlex="100%">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- titulo Column -->
+        <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef> Título </th>
+            <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+        </ng-container>
+
+        <!-- descripcion Column -->
+        <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef> Descripción </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip *ngIf="element.estado == 'NO_ASIGNADA'" [color]="none">No asignada</mat-chip>
+                    <mat-chip *ngIf="element.estado == 'EN_PROGRESO'" [color]="warning" selected>En progreso</mat-chip>
+                    <mat-chip *ngIf="element.estado == 'REALIZADA'" [color]="primary" selected>Realizada</mat-chip>
+                </mat-chip-list>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
+<button mat-fab color="warn" class="mat-fab-bottom-right" (click)="dialogNuevoStory()" style="z-index: 9;">
+    <mat-icon class="mat-24">add</mat-icon>
+</button>
