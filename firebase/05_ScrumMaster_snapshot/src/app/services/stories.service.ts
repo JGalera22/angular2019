@@ -29,8 +29,24 @@ export class StoriesService {
   }
 
   // [Update] de story
-  public updateStory() {}
+  public updateStory(idStoryToUpdate: string, storyDto: StoryDto) {
+    // 5. Cojo la opción 2 pro del deleteStory
+    return this.db.doc(`${collectionName}/${idStoryToUpdate}`).update(storyDto.transformarDto());
+  }
 
   // [Delete] de story
-  public deleteStory() {}
+  // 5. Tengo que recibir el "id" del story a eliminar
+  public deleteStory(idStoryToDelete: string) {
+    // id = "n4378urf83rhf82";
+    // stories/n4378urf83rhf82
+    
+    // Opcion 1
+    // return this.db.collection(collectionName).doc(idStoryToDelete).delete();
+
+    // Opcion 2 (más corta)
+    // return this.db.doc('stories/'+idStoryToDelete).delete();
+    
+    // Opcion 2 (pro) -- template literal (OJO!!!! las comillas son francesas)
+    return this.db.doc(`${collectionName}/${idStoryToDelete}`).delete();
+  }
 }
