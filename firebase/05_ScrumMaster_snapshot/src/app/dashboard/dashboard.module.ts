@@ -26,14 +26,15 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { StoriesListadoComponent } from './stories-listado/stories-listado.component';
 import { StoriesNewDialogComponent } from './stories-new-dialog/stories-new-dialog.component';
 import { StoriesService } from '../services/stories.service';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { AuthService } from '../services/auth.service';
+import { RandomstringComponent } from './randomstring/randomstring.component';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { AuthService } from '../services/auth.service';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  declarations: [DashboardComponent, StoriesListadoComponent, StoriesNewDialogComponent],
+  declarations: [DashboardComponent, StoriesListadoComponent, StoriesNewDialogComponent, RandomstringComponent],
   entryComponents: [StoriesNewDialogComponent],
   providers: [
     StoriesService,

@@ -45,7 +45,6 @@ import { AuthService } from './services/auth.service';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 export function createTranslateLoader(http: HttpClient) {
