@@ -1,0 +1,16 @@
+<div fxFlexLayout="column">
+    <h1 mat-dialog-title>Nueva historia de usuario</h1>
+    <div mat-dialog-content>
+      <mat-form-field>
+        <input matInput [(ngModel)]="storyDto.titulo" placeholder="Título">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="storyDto.descripcion" placeholder="Descripción">
+      </mat-form-field>
+    
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="cerrar()">Cancelar</button>
+      <button mat-button (click)="guardarUsuario()" cdkFocusInitial>Guardar</button>
+    </div>
+    </div>
