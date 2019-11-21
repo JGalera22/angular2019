@@ -9,6 +9,16 @@ export class MenuService {
   getAll() {
     return [
       {
+        link: '/stories',
+        label: this.translate.instant('STORIES'),
+        icon: 'list'
+      },
+      {
+        link: '/team',
+        label: this.translate.instant('TEAM'),
+        icon: 'group'
+      },
+      {
         link: '/',
         label: this.translate.instant('HOME'),
         icon: 'explore'
